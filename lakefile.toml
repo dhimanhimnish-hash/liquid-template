@@ -1,0 +1,5 @@
+name = "LiquidTemplates"
+defaultTargets = ["LiquidTemplates"]
+
+[[lean_lib]]
+name = "LiquidTemplates"
