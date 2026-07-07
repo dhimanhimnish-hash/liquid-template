@@ -27,9 +27,9 @@ inductive Template where
   | forLoop : String → String → Template → Template
 
 def eval : Template → Env → String
-  | .text s, _         => s
-  | .var x, env        => (env.lookup x).elim "" Value.toStr
-  | .seq t1 t2, env    => eval t1 env ++ eval t2 env
+  | .text s, _          => s
+  | .var x, env         => (env.lookup x).elim "" Value.toStr
+  | .seq t1 t2, env     => eval t1 env ++ eval t2 env
   | .ifBlock x t f, env =>
       match env.lookup x with
       | some (.bool true) => eval t env
